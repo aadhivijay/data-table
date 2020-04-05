@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'data-table',
@@ -10,6 +10,7 @@ export class DataTableComponent implements OnChanges {
   @Input() header: any[] = [];
   @Input() data: any[] = [];
   @Input() rowExpand: boolean;
+  @Input() rowExpandTemp: TemplateRef<any>;
 
   ngOnChanges() {
     // this.rowExpandData();

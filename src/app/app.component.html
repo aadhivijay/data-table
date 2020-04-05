@@ -3,10 +3,12 @@
   Start editing to see some magic happen :)
 </p>
 
-<data-table [header]="header" [data]="data" [rowExpand]="true">
+<data-table [header]="header" [data]="data" [rowExpand]="true"
+  [rowExpandTemp]="expandRow">
 
-  <div class="">
+  <ng-template #expandRow let-rowData>
     Hello
-  </div>
+    DATA : {{ rowData | json }}
+  </ng-template>
 
 </data-table>

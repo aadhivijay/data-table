@@ -2,6 +2,10 @@
 
   <div class="header-cont">
 
+    <div class="expand-header" *ngIf="rowExpand">
+      <i> {{ '  ' }} </i>
+    </div>
+
     <div class="header" *ngFor="let title of header">
       {{ title }}
     </div>
@@ -12,21 +16,29 @@
 
     <div class="data-row" *ngFor="let value of data">
 
-      <div class="data" *ngFor="let title of header">
-        {{ value[title] }}
+      <div class="data-row-card">
+        <div class="expand-header" *ngIf="rowExpand">
+          <i *ngIf="!value.row_exapnd"
+            (click)="value.row_exapnd = !value.row_exapnd">
+            {{ ' > ' }}
+          </i>
+          <i *ngIf="value.row_exapnd"
+            (click)="value.row_exapnd = !value.row_exapnd">
+            {{ ' ^ ' }}
+          </i>
+        </div>
+
+        <div class="data" *ngFor="let title of header">
+          {{ value[title] }}
+        </div>
       </div>
 
-      <div *ngIf="rowExpand">
-        <ng-container *ngTemplateOutlet="rowExpandCard; context: { $implicit : value}"></ng-container>
+      <div class="row-expand-card" *ngIf="!value.row_exapnd">
+        <ng-container *ngTemplateOutlet="rowExpandTemp; context: { $implicit : value}"></ng-container>
       </div>
 
     </div>
 
   </div>
-
-  <ng-template #rowExpandCard let-rowData>
-    DATA : {{ rowData | json }}
-    <ng-content></ng-content>
-  </ng-template>
 
 </div>

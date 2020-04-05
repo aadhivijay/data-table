@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.expand-header {
+  width: 20px;
+}
+
 .header-cont {
   display: flex;
 }
@@ -20,10 +24,20 @@
 
 .data-row {
   display: flex;
+  flex-direction: column;
+}
+
+.data-row-card {
+  display: flex;
 }
 
 .data {
   padding: 4px;
   border: 1px solid;
   flex-basis: 25%;
+}
+
+.row-expand-card {
+  display: flex;
+  flex-basis: 100%;
 }
