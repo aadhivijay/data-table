@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-cont {
+  display: flex;
+}
+
+.header {
+  padding: 4px;
+  border: 1px solid;
+  flex-basis: 25%;
+}
+
+.data-cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.data-row {
+  display: flex;
+}
+
+.data {
+  padding: 4px;
+  border: 1px solid;
+  flex-basis: 25%;
+}

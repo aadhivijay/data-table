@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
+
+  header = [
+    'S no',
+    'Name',
+    'Roll no'
+  ];
+
+  data = [
+    {
+      'S no': 1,
+      'Name': 'A',
+      'Roll no': 100
+    },
+    {
+      'S no': 2,
+      'Name': 'B',
+      'Roll no': 101
+    }
+  ];
 }
